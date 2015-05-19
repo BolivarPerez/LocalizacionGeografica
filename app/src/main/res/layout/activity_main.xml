@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/lblposicion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/posicion_actual"/>
+
+    <TextView
+        android:id="@+id/lblposLatitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#aaaaaa"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/lblposLongitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#aaaaaa"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/lblposPrecision"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#aaaaaa"
+        android:textColor="#000000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activar"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btnDesactivar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/desactivar"
+        android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblEst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/estado_proveedor"
+        />
+
+    <TextView
+        android:id="@+id/lblEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#aaaaaa"
+        android:textColor="#000000"/>
+
+</LinearLayout>
