@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    //Se Declaran variables.
    private  TextView  lblLatitud, lblLongitud,lblPresicion, lblEstado;
    private Button btnActualizar, btnDesactivar;
 
@@ -29,6 +30,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Se enlazan EditText y los botones.
         btnActualizar = (Button) findViewById(R.id.btnActualizar);
         btnDesactivar = (Button) findViewById(R.id.btnDesactivar);
         lblLatitud = (TextView) findViewById(R.id.lblposLatitud);
@@ -36,6 +38,7 @@ public class MainActivity extends Activity {
         lblPresicion = (TextView) findViewById(R.id.lblposPrecision);
         lblEstado = (TextView) findViewById(R.id.lblEstado);
 
+        //Se agrega funcionalidad al darle click a los botones.
         btnActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +55,7 @@ public class MainActivity extends Activity {
         });
     }
 
+    //Metodo que permitira mostrar la posicion mediante la latitud, longitud, presicion.
     private void mostrarPosicion (Location loc) {
         if (loc != null) {
             lblLatitud.setText("Latitud: " + String.valueOf(loc.getLatitude()));
@@ -65,20 +69,26 @@ public class MainActivity extends Activity {
         }
     }
 
+    //Metodo que permitira iniciar la localizacion.
     private void comenzarLocalizacion()
     {
+        //Obtenemos una referencia al LocationManager
         locManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 
+        //Obtenemos la última posición conocida
        Location loc =  locManager .getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
+        //Mostramos la última posición conocida
         mostrarPosicion(loc);
 
+        //Nos registramos para recibir actualizaciones de la posición
         locListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
                 mostrarPosicion(location);
             }
 
+            //METODOS PARA IDENTIFICAR EL ESTADO DEL PROVEEDOR.
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
 
